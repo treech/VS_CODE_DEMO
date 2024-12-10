@@ -3,4 +3,4 @@ project(day02)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(day02 main9.cpp ArrayUtil.cpp)
+add_executable(day02 main10.cpp ArrayUtil.cpp)

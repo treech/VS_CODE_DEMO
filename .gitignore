@@ -1,3 +1,7 @@
 cmake-build-debug/
-./vs/
-./.idea/
+.vs/
+.idea/
+/Day02/Day02.vcxproj
+/Day02/Day02.vcxproj.user
+/Day02/Day02.vcxproj.filters
+/Day02/Day02.sln

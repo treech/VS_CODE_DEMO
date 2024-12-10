@@ -2,6 +2,18 @@
 
 using namespace std;
 
+void swap(int &x, int &y) {
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
+void swap(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
 /**
  * 选择排序
  * 在一个长度为 N 的无序数组中，第一次遍历 n-1 个数找到最小的和第一个数交换。
@@ -18,9 +30,10 @@ void selectSort(int arr[], int len) {
                 min = j;
             }
         }
-        int temp = arr[i];
-        arr[i] = arr[min];
-        arr[min] = temp;
+        if (min != i) {
+            //        swap(arr[i], arr[min]);
+            swap(&arr[i], &arr[min]);
+        }
     }
 }
 
@@ -42,7 +55,7 @@ int main() {
 //        cout << arr[i] << " ";
 //    }
     for (int i = 0; i < 10; ++i) {
-        cout << *(arr+i) << " ";
+        cout << *(arr + i) << " ";
     }
 
     return 0;
