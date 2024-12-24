@@ -22,32 +22,31 @@ void swap(int *x, int *y) {
     *y = temp;
 }
 
-void insertSort(int arr[], int len) {
-    int i, j;
-    for (i = 1; i < len; i++) {
-        for (j = i; j > 0; j--) {
-            if (arr[j] < arr[j - 1]) {
-                swap(arr[j], arr[j - 1]);
-            } else {
-                break;
-            }
-        }
-    }
-}
-
-
-int main() {
-    int len = 10;
-    int *arr = create_random_array(len, -30, 30);
+void printArr(int arr[], int len){
     for (int i = 0; i < len; ++i) {
         cout << arr[i] << " ";
     }
     cout << endl;
-    insertSort(arr, len);
-    cout<<"-----------------------------"<<endl;
-    for (int i = 0; i < len; ++i) {
-        cout << arr[i] << " ";
+}
+
+void insertSort(int arr[], int len) {
+    int i, j;
+    for (i = 1; i < len; i++) {
+        int temp = arr[i];
+        for (j = i; j > 0 && arr[j - 1] > temp; j--) {
+            swap(arr[j], arr[j - 1]);
+        }
     }
+}
+
+int main() {
+    int len = 10;
+    int *arr = create_random_array(len, -100, 100);
+    cout << "--------------排序前---------------" << endl;
+    printArr(arr,len);
+    insertSort(arr, len);
+    cout << "--------------排序后---------------" << endl;
+    printArr(arr,len);
     delete arr;
     return 0;
 }
