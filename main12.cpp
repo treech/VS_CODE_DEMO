@@ -22,7 +22,7 @@ void swap(int *x, int *y) {
     *y = temp;
 }
 
-void printArr(int arr[], int len){
+void printArr(int arr[], int len) {
     for (int i = 0; i < len; ++i) {
         cout << arr[i] << " ";
     }
@@ -34,7 +34,10 @@ void insertSort(int arr[], int len) {
     for (i = 1; i < len; i++) {
         int temp = arr[i];
         for (j = i; j > 0 && arr[j - 1] > temp; j--) {
-            swap(arr[j], arr[j - 1]);
+            arr[j] = arr[j - 1];
+        }
+        if (i != j) {
+            arr[j] = temp;
         }
     }
 }
@@ -43,10 +46,10 @@ int main() {
     int len = 10;
     int *arr = create_random_array(len, -100, 100);
     cout << "--------------排序前---------------" << endl;
-    printArr(arr,len);
+    printArr(arr, len);
     insertSort(arr, len);
     cout << "--------------排序后---------------" << endl;
-    printArr(arr,len);
+    printArr(arr, len);
     delete arr;
     return 0;
 }
