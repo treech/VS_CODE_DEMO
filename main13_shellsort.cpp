@@ -52,6 +52,7 @@ void shellSort(int arr[], int len) {
                 for (k = j; k >= group_len && arr[k - group_len] > temp; k -= group_len) {
                     arr[k] = arr[k - group_len];
                 }
+                cout << "i:" << i << " j:" << j << " k:" << k << " group_len:" << group_len << endl;
                 arr[k] = temp;
             }
         }
@@ -61,7 +62,7 @@ void shellSort(int arr[], int len) {
 
 
 int main() {
-    int len = 10;
+    int len = 100;
     int *arr = create_random_array(len, -100, 100);
     cout << "--------------排序前---------------" << endl;
     printArr(arr, len);
