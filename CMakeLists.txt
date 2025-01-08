@@ -3,4 +3,4 @@ project(day02)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(day02 ArrayUtil.cpp merge_sort.cpp)
+add_executable(day02 ArrayUtil.cpp quick_sort.cpp)

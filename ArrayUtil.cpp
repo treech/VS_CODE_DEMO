@@ -9,3 +9,16 @@ int *create_random_array(int len, int low, int high) {
     }
     return arr;
 }
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void printArr(int arr[], int len) {
+    for (int i = 0; i < len; ++i) {
+        printf("%d ", arr[i]);
+    }
+    putchar('\n');
+}
